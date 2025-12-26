@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nomadic Major</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Nomadic Major</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 
-        body {
-            margin: 0;
-            height: 100vh;
-            background: #000;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #eaeaea;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #000;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #eaeaea;
+}
 
-        .screen {
-            width: 100%;
-            height: 100%;
-            max-width: 420px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 24px;
-            text-align: center;
-        }
+.screen {
+    max-width: 420px;
+    margin: auto;
+    padding: 24px;
+    text-align: center;
+}
 
-        .name {
-            font-size: 22px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
+.name {
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
 
-        .sub {
-            font-size: 12px;
-            opacity: 0.55;
-            margin-bottom: 30px;
-        }
+.sub {
+    font-size: 12px;
+    opacity: 0.55;
+    margin-bottom: 30px;
+}
 
-        .reveal-btn {
-            padding: 14px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #fff;
-            font-size: 14px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
+.reveal-btn {
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+}
 
-        .qr-wrapper {
-            display: none;
-            background: #fff;
-            padding: 14px;
-            border-radius: 14px;
-        }
+.qr-wrapper {
+    display: none;
+    background: #fff;
+    padding: 14px;
+    border-radius: 14px;
+}
 
-        .qr-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.qr-wrapper img {
+    width: 100%;
+    height: auto;
+}
 
-        .link-box {
-            margin-top: 25px;
-            font-size: 13px;
-            opacity: 0.75;
-            word-break: break-all;
-        }
+.link-box {
+    margin-top: 25px;
+    font-size: 13px;
+    opacity: 0.8;
+    word-break: break-all;
+}
 
-        .link-box a {
-            color: #9ad1ff;
-            text-decoration: none;
-        }
+.link-box a {
+    color: #9ad1ff;
+    text-decoration: none;
+}
 
-        .footer {
-            margin-top: 25px;
-            font-size: 11px;
-            opacity: 0.4;
-        }
-    </style>
+.section {
+    margin-top: 45px;
+    text-align: left;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.section h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 11px;
+    opacity: 0.4;
+    text-align: center;
+}
+</style>
 </head>
+
 <body>
 
 <div class="screen">
+
     <div class="name">Nomadic Major</div>
     <div class="sub">tap · reveal · proceed</div>
 
     <button class="reveal-btn" onclick="showQR()">REVEAL QR</button>
 
     <div id="qr" class="qr-wrapper">
-        
         <img src="razor.jpg" alt="QR Code">
     </div>
 
@@ -110,16 +118,58 @@
         </a>
     </div>
 
-    <div class="footer">
-        Paisa ayikathe ni onnum oombandadaa
+    <!-- PRIVACY POLICY -->
+    <div class="section">
+        <h3>Privacy Policy</h3>
+        <p>This website does not collect, store, or process personal information.</p>
+        <p>No cookies, analytics, or tracking technologies are used.</p>
+        <p>External links are accessed at the user’s discretion.</p>
     </div>
+
+    <!-- TERMS -->
+    <div class="section">
+        <h3>Terms & Conditions</h3>
+        <p>This website is provided for informational and convenience purposes only.</p>
+        <p>The owner is not responsible for third-party platforms or services.</p>
+        <p>Use of this site is entirely at the user’s own risk.</p>
+    </div>
+
+    <!-- REFUND -->
+    <div class="section">
+        <h3>Cancellations & Refunds</h3>
+        <p>No physical goods or services are sold through this website.</p>
+        <p>Any transactions made via third-party platforms are final.</p>
+        <p>No refunds or cancellations are applicable.</p>
+    </div>
+
+    <!-- SHIPPING POLICY -->
+<div class="section">
+    <h3>Shipping Policy</h3>
+    <p>This website does not involve the sale or delivery of physical goods.</p>
+    <p>No shipping, courier, or logistics services are applicable.</p>
+    <p>All interactions, if any, are digital in nature.</p>
+</div>
+
+
+    <!-- CONTACT -->
+    <div class="section">
+        <h3>Contact</h3>
+        <p>This website does not maintain direct communication channels.</p>
+        <p>Please use the platform through which you accessed this site.</p>
+    </div>
+
+    <div class="footer">
+        <h1>Paisa ayikathe ni oke OOMBANDA</h1>
+    </div>
+
 </div>
 
 <script>
-    function showQR() {
-        document.getElementById("qr").style.display = "block";
-    }
+function showQR() {
+    document.getElementById("qr").style.display = "block";
+}
 </script>
 
 </body>
 </html>
+
