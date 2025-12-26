@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nomadic Major</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #000;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #eaeaea;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 22px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .sub {
+            font-size: 12px;
+            opacity: 0.55;
+            margin-bottom: 30px;
+        }
+
+        .reveal-btn {
+            padding: 14px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .qr-wrapper {
+            display: none;
+            background: #fff;
+            padding: 14px;
+            border-radius: 14px;
+        }
+
+        .qr-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .link-box {
+            margin-top: 25px;
+            font-size: 13px;
+            opacity: 0.75;
+            word-break: break-all;
+        }
+
+        .link-box a {
+            color: #9ad1ff;
+            text-decoration: none;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 11px;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="screen">
+    <div class="name">Nomadic Major</div>
+    <div class="sub">tap · reveal · proceed</div>
+
+    <button class="reveal-btn" onclick="showQR()">REVEAL QR</button>
+
+    <div id="qr" class="qr-wrapper">
+        
+        <img src="razor.jpg" alt="QR Code">
+    </div>
+
+    <div class="link-box">
+        If QR doesn’t work, use link:<br>
+        <a href="https://razorpay.me/@super6253" target="_blank">
+            https://razorpay.me/@super6253
+        </a>
+    </div>
+
+    <div class="footer">
+        Paisa ayikathe ni onnum oombandadaa
+    </div>
+</div>
+
+<script>
+    function showQR() {
+        document.getElementById("qr").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
