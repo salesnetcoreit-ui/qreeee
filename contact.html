@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact - Nomadic Major</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    background: #0b0b0b;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #eaeaea;
+}
+
+.screen {
+    max-width: 800px;
+    margin: auto;
+    padding: 26px 22px 40px;
+}
+
+.name {
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.sub {
+    font-size: 12px;
+    opacity: 0.6;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.content {
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    color: #eaeaea;
+    font-size: 14px;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #9ad1ff;
+    color: #0b0b0b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #9ad1ff;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="screen">
+
+    <div class="name">Nomadic Major</div>
+    <div class="sub">books · media · digital entertainment</div>
+
+    <div class="content">
+        <h1>Contact Us</h1>
+        
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Whether you have questions about our products, need support, or want to provide feedback, feel free to reach out.</p>
+        
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> 12341234</p>
+        <p><strong>Email:</strong> admin@gmail.com</p>
+        <p><strong>Business Hours:</strong> Monday - Friday, 9 AM - 6 PM</p>
+        
+        <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form onsubmit="sendMessage(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">← Back to Home</a>
+    </div>
+
+</div>
+
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+}
+</script>
+
+</body>
+</html>
