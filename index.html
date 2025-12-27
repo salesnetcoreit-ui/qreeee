@@ -1,8 +1,11 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nomadic Major</title>
+<title>Nomadic Major | Books & Media</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -13,8 +16,7 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
-    background: #000;
+    background: #0b0b0b;
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #eaeaea;
 }
@@ -22,34 +24,87 @@ body {
 .screen {
     max-width: 420px;
     margin: auto;
-    padding: 24px;
-    text-align: center;
+    padding: 26px 22px 40px;
 }
 
 .name {
     font-size: 22px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    text-align: center;
     margin-bottom: 6px;
 }
 
 .sub {
     font-size: 12px;
-    opacity: 0.55;
+    opacity: 0.6;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 14px;
     margin-bottom: 30px;
 }
 
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.search {
+    margin-bottom: 20px;
+}
+
+.search input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: #eaeaea;
+    font-size: 14px;
+}
+
+.nav {
+    margin-bottom: 30px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav a {
+    color: #9ad1ff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
 .reveal-btn {
+    width: 100%;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 14px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
     color: #fff;
     font-size: 14px;
     letter-spacing: 1px;
     cursor: pointer;
-    margin-bottom: 20px;
-    width: 100%;
+    margin-bottom: 18px;
 }
 
 .qr-wrapper {
@@ -57,6 +112,7 @@ body {
     background: #fff;
     padding: 14px;
     border-radius: 14px;
+    margin-bottom: 14px;
 }
 
 .qr-wrapper img {
@@ -65,10 +121,11 @@ body {
 }
 
 .link-box {
-    margin-top: 25px;
     font-size: 13px;
-    opacity: 0.8;
+    opacity: 0.85;
+    text-align: center;
     word-break: break-all;
+    margin-bottom: 30px;
 }
 
 .link-box a {
@@ -77,23 +134,203 @@ body {
 }
 
 .section {
-    margin-top: 45px;
-    text-align: left;
+    margin-top: 36px;
     font-size: 13px;
-    opacity: 0.85;
 }
 
 .section h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.book-list {
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    background: rgba(255,255,255,0.02);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.book img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+.book-content {
+    flex: 1;
+}
+
+.book:last-child {
+    margin-bottom: 0;
+}
+
+.book:last-child {
+    margin-bottom: 0;
+}
+
+.book-title {
     font-size: 14px;
+    font-weight: 600;
+}
+
+.book-meta {
+    font-size: 12px;
+    opacity: 0.65;
     margin-bottom: 8px;
-    opacity: 0.9;
+}
+
+.buy-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #9ad1ff;
+    border: none;
+    color: #0b0b0b;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.delivery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery-form {
+    background: #0b0b0b;
+    padding: 20px;
+    border-radius: 14px;
+    max-width: 400px;
+    width: 90%;
+    color: #eaeaea;
+}
+
+.delivery-form h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.delivery-form input, .delivery-form select, .delivery-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    color: #eaeaea;
+    font-size: 14px;
+}
+
+.delivery-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #9ad1ff;
+    color: #0b0b0b;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.close-btn {
+    float: right;
+    background: none;
+    border: none;
+    color: #eaeaea;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .footer {
-    margin-top: 40px;
+    margin-top: 45px;
     font-size: 11px;
     opacity: 0.4;
     text-align: center;
+}
+
+.reviews {
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.review {
+    background: rgba(255,255,255,0.02);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.review:last-child {
+    margin-bottom: 0;
+}
+
+.newsletter {
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 36px;
+}
+
+.newsletter h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.newsletter input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: #eaeaea;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #9ad1ff;
+    border: none;
+    color: #0b0b0b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .screen {
+        max-width: 800px;
+    }
+    .book-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 16px;
+    }
+    .book {
+        margin-bottom: 0;
+    }
 }
 </style>
 </head>
@@ -103,91 +340,355 @@ body {
 <div class="screen">
 
     <div class="name">Nomadic Major</div>
-    <div class="sub">tap · reveal · proceed</div>
+    <div class="sub">books · media · digital entertainment</div>
 
-    <button class="reveal-btn" onclick="showQR()">REVEAL QR</button>
+    <div class="hero">
+        <h1>Welcome to Nomadic Major</h1>
+        <p>Discover books and media that inspire your journey.</p>
+    </div>
+
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Search books...">
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#fiction">Fiction</a></li>
+            <li><a href="#selfhelp">Self-Help</a></li>
+            <li><a href="#tech">Technology</a></li>
+            <li><a href="#bio">Biography</a></li>
+            <li><a href="#media">Media</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAYMENT -->
+    <button class="reveal-btn" onclick="showQR()">UNLOCK PAYMENT OPTIONS</button>
 
     <div id="qr" class="qr-wrapper">
-        <img src="razor.jpg" alt="QR Code">
+        <img src="razor.jpg" alt="Payment QR">
     </div>
 
     <div class="link-box">
-        If QR doesn’t work, use link:<br>
+        Direct payment link:<br>
         <a href="https://razorpay.me/@super6253" target="_blank">
             https://razorpay.me/@super6253
         </a>
     </div>
 
-    <!-- PRIVACY POLICY -->
-    <div class="section">
-        <h3>Privacy Policy</h3>
-        <p>This website does not collect, store, or process personal information.</p>
-        <p>No cookies, analytics, or tracking technologies are used.</p>
-        <p>External links are accessed at the user’s discretion.</p>
+    <!-- BOOK CATALOG -->
+    <div class="section" id="fiction">
+        <h3>Fiction</h3>
+        <div class="book-list">
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Midnight" alt="Midnight Pages">
+                <div class="book-content">
+                    <div class="book-title">Midnight Pages</div>
+                    <div class="book-meta">Fiction · Paperback & eBook · $14.99</div>
+                    <button class="buy-btn" onclick="buyBook('Midnight Pages')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Echoes" alt="Echoes of Tomorrow">
+                <div class="book-content">
+                    <div class="book-title">Echoes of Tomorrow</div>
+                    <div class="book-meta">Sci-Fi · Paperback · $16.99</div>
+                    <button class="buy-btn" onclick="buyBook('Echoes of Tomorrow')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Urban" alt="Urban Legends">
+                <div class="book-content">
+                    <div class="book-title">Urban Legends</div>
+                    <div class="book-meta">Mystery · Paperback · $13.99</div>
+                    <button class="buy-btn" onclick="buyBook('Urban Legends')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Shadows" alt="Shadows of the Past">
+                <div class="book-content">
+                    <div class="book-title">Shadows of the Past</div>
+                    <div class="book-meta">Thriller · Paperback · $15.99</div>
+                    <button class="buy-btn" onclick="buyBook('Shadows of the Past')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Dreams" alt="Dreams Unbound">
+                <div class="book-content">
+                    <div class="book-title">Dreams Unbound</div>
+                    <div class="book-meta">Fantasy · eBook · $12.99</div>
+                    <button class="buy-btn" onclick="buyBook('Dreams Unbound')">Buy Now</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- TERMS & CONDITIONS -->
-<div class="section">
-    <h3>Terms & Conditions</h3>
+    <div class="section" id="selfhelp">
+        <h3>Self-Help & Lifestyle</h3>
+        <div class="book-list">
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Nomadic" alt="Nomadic Minds">
+                <div class="book-content">
+                    <div class="book-title">Nomadic Minds</div>
+                    <div class="book-meta">Self-Growth · Digital Edition · $12.99</div>
+                    <button class="buy-btn" onclick="buyBook('Nomadic Minds')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Minimal" alt="Minimal Living">
+                <div class="book-content">
+                    <div class="book-title">Minimal Living</div>
+                    <div class="book-meta">Lifestyle · eBook · $8.99</div>
+                    <button class="buy-btn" onclick="buyBook('Minimal Living')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Mindful" alt="Mindful Moments">
+                <div class="book-content">
+                    <div class="book-title">Mindful Moments</div>
+                    <div class="book-meta">Self-Growth · Digital Edition · $10.99</div>
+                    <button class="buy-btn" onclick="buyBook('Mindful Moments')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Habits" alt="Atomic Habits">
+                <div class="book-content">
+                    <div class="book-title">Atomic Habits</div>
+                    <div class="book-meta">Productivity · Paperback · $16.99</div>
+                    <button class="buy-btn" onclick="buyBook('Atomic Habits')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <p>This website operates as an online platform for showcasing and facilitating the purchase of books and related reading materials.</p>
+    <div class="section" id="tech">
+        <h3>Technology</h3>
+        <div class="book-list">
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Silent" alt="The Silent Algorithm">
+                <div class="book-content">
+                    <div class="book-title">The Silent Algorithm</div>
+                    <div class="book-meta">Technology · Digital Edition · $9.99</div>
+                    <button class="buy-btn" onclick="buyBook('The Silent Algorithm')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Code" alt="Code Chronicles">
+                <div class="book-content">
+                    <div class="book-title">Code Chronicles</div>
+                    <div class="book-meta">Programming · Digital Edition · $19.99</div>
+                    <button class="buy-btn" onclick="buyBook('Code Chronicles')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Digital" alt="Digital Dreams">
+                <div class="book-content">
+                    <div class="book-title">Digital Dreams</div>
+                    <div class="book-meta">Tech Fiction · eBook · $11.99</div>
+                    <button class="buy-btn" onclick="buyBook('Digital Dreams')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=AI" alt="AI Revolution">
+                <div class="book-content">
+                    <div class="book-title">AI Revolution</div>
+                    <div class="book-meta">Technology · eBook · $14.99</div>
+                    <button class="buy-btn" onclick="buyBook('AI Revolution')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Blockchain" alt="Blockchain Basics">
+                <div class="book-content">
+                    <div class="book-title">Blockchain Basics</div>
+                    <div class="book-meta">Tech · Digital Edition · $11.99</div>
+                    <button class="buy-btn" onclick="buyBook('Blockchain Basics')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <p>All product descriptions, prices, and availability are subject to change without prior notice.</p>
+    <div class="section" id="bio">
+        <h3>Biography</h3>
+        <div class="book-list">
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Steve" alt="Steve Jobs Biography">
+                <div class="book-content">
+                    <div class="book-title">Steve Jobs: The Exclusive Biography</div>
+                    <div class="book-meta">Biography · Paperback · $24.99</div>
+                    <button class="buy-btn" onclick="buyBook('Steve Jobs: The Exclusive Biography')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Einstein" alt="Einstein Biography">
+                <div class="book-content">
+                    <div class="book-title">Einstein: His Life and Universe</div>
+                    <div class="book-meta">Biography · eBook · $19.99</div>
+                    <button class="buy-btn" onclick="buyBook('Einstein: His Life and Universe')">Buy Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Tesla" alt="Tesla Biography">
+                <div class="book-content">
+                    <div class="book-title">Tesla: Inventor of the Modern</div>
+                    <div class="book-meta">Biography · Digital Edition · $17.99</div>
+                    <button class="buy-btn" onclick="buyBook('Tesla: Inventor of the Modern')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <p>Books listed on this platform may be physical or digital in nature. Digital content, once accessed or delivered, is considered non-returnable.</p>
+    <div class="section" id="media">
+        <h3>Digital Media</h3>
+        <div class="book-list">
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Course" alt="Coding Bootcamp">
+                <div class="book-content">
+                    <div class="book-title">Coding Bootcamp Course</div>
+                    <div class="book-meta">Online Course · Digital · $49.99</div>
+                    <button class="buy-btn" onclick="buyBook('Coding Bootcamp Course')">Enroll Now</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Podcast" alt="Tech Podcast Series">
+                <div class="book-content">
+                    <div class="book-title">Tech Podcast Series</div>
+                    <div class="book-meta">Audio · Subscription · $9.99/month</div>
+                    <button class="buy-btn" onclick="buyBook('Tech Podcast Series')">Subscribe</button>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://via.placeholder.com/60x80/333/fff?text=Video" alt="Documentary Collection">
+                <div class="book-content">
+                    <div class="book-title">Documentary Collection</div>
+                    <div class="book-meta">Video · Digital · $29.99</div>
+                    <button class="buy-btn" onclick="buyBook('Documentary Collection')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <p>Customers are responsible for providing accurate contact and delivery details during checkout. The website is not liable for delays or failures caused by incorrect information.</p>
+    <!-- ABOUT -->
+    <div class="section">
+        <h3>About Nomadic Major</h3>
+        <p>Nomadic Major is an independent digital media and book platform offering curated reading material, creative content, and entertainment resources.</p>
+    </div>
 
-    <p>All payments are processed through third-party payment service providers. This website does not store or process sensitive payment information.</p>
+    <div class="section">
+        <h3>Customer Reviews</h3>
+        <div class="reviews">
+            <div class="review">"An amazing collection of books that broadened my horizons!" - Alex R.</div>
+            <div class="review">"The digital media courses are top-notch. Highly recommend!" - Jamie L.</div>
+            <div class="review">"Great platform for independent creators. Love the variety!" - Taylor M.</div>
+        </div>
+    </div>
 
-    <p>Unauthorized reproduction, redistribution, or resale of any book content obtained through this platform is strictly prohibited.</p>
+    <!-- PRIVACY -->
+    <div class="section">
+        <h3><a href="privacy.html" style="color: #9ad1ff; text-decoration: none;">Privacy Policy</a></h3>
+        <p>No personal data is collected or stored.</p>
+        <p>Payments are securely handled by third-party providers.</p>
+    </div>
 
-    <p>The website reserves the right to refuse service, cancel orders, or restrict access in cases of misuse, fraud, or violation of these terms.</p>
+    <!-- TERMS -->
+    <div class="section">
+        <h3><a href="terms.html" style="color: #9ad1ff; text-decoration: none;">Terms & Conditions</a></h3>
+        <p>All books and media content are protected by copyright laws.</p>
+        <p>Content is provided for personal use only.</p>
+        <p>Unauthorized reproduction or resale is prohibited.</p>
+    </div>
 
-    <p>By using this website, you acknowledge that you have read, understood, and agreed to these Terms & Conditions.</p>
-</div>
-
+    <!-- SHIPPING -->
+    <div class="section">
+        <h3>Shipping Policy</h3>
+        <p>Digital items are delivered electronically.</p>
+        <p>If physical books are offered, dispatch time is <strong>1–2 business days</strong>.</p>
+    </div>
 
     <!-- REFUND -->
     <div class="section">
-        <h3>Cancellations & Refunds</h3>
-        <p>No physical goods or services are sold through this website.</p>
-        <p>Any transactions made via third-party platforms are final.</p>
-        <p>No refunds or cancellations are applicable.</p>
+        <h3><a href="refund.html" style="color: #9ad1ff; text-decoration: none;">Cancellations & Refunds</a></h3>
+        <p>Digital content purchases are non-refundable.</p>
+        <p>Physical items may be eligible for refunds as per policy.</p>
     </div>
-
-   <!-- SHIPPING POLICY -->
-<div class="section">
-    <h3>Shipping Policy</h3>
-    <p>Orders, if applicable, are processed within a standard timeframe.</p>
-    <p>Estimated shipping time is <strong>1 to 2 business days</strong>.</p>
-    <p>Delivery timelines may vary depending on external factors and third-party services.</p>
-</div>
-
-
 
     <!-- CONTACT -->
-<div class="section">
-    <h3>Contact</h3>
-    <p>For any queries or concerns, you may reach out using the details below:</p>
-    <p>Phone: <strong>12341234</strong></p>
-    <p>Email: <strong>admin@gmail.com</strong></p>
-</div>
-
-
-    <div class="footer">
-        <h1>Paisa ayikathe ni oke OOMBANDA</h1>
+    <div class="section">
+        <h3><a href="contact.html" style="color: #9ad1ff; text-decoration: none;">Contact</a></h3>
+        <p>Phone: <strong>12341234</strong></p>
+        <p>Email: <strong>admin@gmail.com</strong></p>
     </div>
 
+    <div class="newsletter">
+        <h3>Subscribe to Our Newsletter</h3>
+        <input type="email" placeholder="Enter your email">
+        <button onclick="subscribe()">Subscribe</button>
+    </div>
+
+    <div class="footer">
+        <p>Follow us on <a href="#" style="color: #9ad1ff;">Twitter</a> | <a href="#" style="color: #9ad1ff;">Instagram</a></p>
+        <p>independent store · digital first · no identity</p>
+    </div>
+
+</div>
+
+<!-- Delivery Modal -->
+<div id="deliveryModal" class="delivery-modal">
+    <div class="delivery-form">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        <h3>Delivery Details for <span id="selectedBook"></span></h3>
+        <form onsubmit="submitOrder(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <textarea placeholder="Delivery Address" rows="3" required></textarea>
+            <select required>
+                <option value="">Select Delivery Option</option>
+                <option value="digital">Digital Delivery (Instant)</option>
+                <option value="standard">Standard Shipping (3-5 days) - $5.99</option>
+                <option value="express">Express Shipping (1-2 days) - $9.99</option>
+            </select>
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
 </div>
 
 <script>
 function showQR() {
     document.getElementById("qr").style.display = "block";
 }
+
+function buyBook(bookTitle) {
+    document.getElementById('selectedBook').textContent = bookTitle;
+    document.getElementById('deliveryModal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('deliveryModal').style.display = 'none';
+}
+
+function submitOrder(event) {
+    event.preventDefault();
+    alert('Order submitted! Redirecting to payment...');
+    closeModal();
+    window.open('https://razorpay.me/@super6253', '_blank');
+}
+
+function subscribe() {
+    alert('Thank you for subscribing!');
+}
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const books = document.querySelectorAll('.book');
+    books.forEach(book => {
+        const title = book.querySelector('.book-title').textContent.toLowerCase();
+        if (title.includes(query)) {
+            book.style.display = 'flex';
+        } else {
+            book.style.display = 'none';
+        }
+    });
+});
 </script>
 
 </body>
 </html>
-
-
