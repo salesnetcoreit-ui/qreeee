@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Nomadic Major | Books & Media</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <style>
 * {
@@ -633,11 +634,11 @@ body {
         <button class="close-btn" onclick="closeModal()">&times;</button>
         <h3>Delivery Details for <span id="selectedBook"></span></h3>
         <form onsubmit="submitOrder(event)">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <textarea placeholder="Delivery Address" rows="3" required></textarea>
-            <select required>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <textarea name="address" placeholder="Delivery Address" rows="3" required></textarea>
+            <select name="delivery" required>
                 <option value="">Select Delivery Option</option>
                 <option value="digital">Digital Delivery (Instant)</option>
                 <option value="standard">Standard Shipping (3-5 days) - $5.99</option>
@@ -649,6 +650,22 @@ body {
 </div>
 
 <script>
+const RAZORPAY_KEY_ID = 'rzp_live_RwtwXsBUOTGCVM';
+
+// Book prices in paise (1 INR = 100 paise, converted from USD at 83:1 rate)
+const bookPrices = {
+    'Midnight Pages': 124400,      // $14.99
+    'Echoes of Tomorrow': 141000,  // $16.99
+    'Urban Legends': 116100,       // $13.99
+    'Shadows of the Past': 132700, // $15.99
+    'Dreams Unbound': 107800,      // $12.99
+    'Nomadic Minds': 107800,       // $12.99
+    'Minimal Living': 74600,       // $8.99
+    'Mindful Moments': 91200,      // $10.99
+    'Atomic Habits': 124400,       // $14.99 (assuming same as similar books)
+    'Tech Podcast Series': 99900   // $11.99/month (assuming)
+};
+
 function showQR() {
     document.getElementById("qr").style.display = "block";
 }
@@ -664,9 +681,46 @@ function closeModal() {
 
 function submitOrder(event) {
     event.preventDefault();
-    alert('Order submitted! Redirecting to payment...');
-    closeModal();
-    window.open('https://razorpay.me/@super6253', '_blank');
+    
+    const bookTitle = document.getElementById('selectedBook').textContent;
+    const amount = bookPrices[bookTitle] || 100000; // Default to 1000 INR if not found
+    
+    // Get form data
+    const form = event.target;
+    const formData = new FormData(form);
+    const customerName = formData.get('name') || 'Customer';
+    const customerEmail = formData.get('email') || '';
+    const customerPhone = formData.get('phone') || '';
+    
+    // Initialize Razorpay
+    const options = {
+        key: RAZORPAY_KEY_ID,
+        amount: amount,
+        currency: 'INR',
+        name: 'Nomadic Major',
+        description: `Purchase: ${bookTitle}`,
+        prefill: {
+            name: customerName,
+            email: customerEmail,
+            contact: customerPhone
+        },
+        theme: {
+            color: '#9ad1ff'
+        },
+        handler: function (response) {
+            alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+            closeModal();
+            // Here you can add code to save order details or send confirmation email
+        },
+        modal: {
+            ondismiss: function() {
+                alert('Payment cancelled by user');
+            }
+        }
+    };
+    
+    const rzp = new Razorpay(options);
+    rzp.open();
 }
 
 function subscribe() {
@@ -689,3 +743,7 @@ document.getElementById('searchInput').addEventListener('input', function() {
 
 </body>
 </html>
+
+</body>
+</html>
+
